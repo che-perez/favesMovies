@@ -1,0 +1,26 @@
+{
+  "name": "favesmovies",
+  "version": "1.0.0",
+  "description": "App to search and store my favorites movies.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/che-perez/favesMovies.git"
+  },
+  "author": "Josue Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/che-perez/favesMovies/issues"
+  },
+  "homepage": "https://github.com/che-perez/favesMovies#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg-promise": "^8.2.2"
+  }
+}
