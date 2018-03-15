@@ -20,6 +20,9 @@ app.get('/', (req, res) => {
     res.send("Hola Mundo");
 })
 
+const apiRoutes = require('./routes/apiRoutes');
+app.use('/api/', apiRoutes);
+
 app.use('*', (req,res) => {
     res.status(404).send('Not Found');
 });
