@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import Controller from './components/Controller';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Front End Faves Movies
+        <Controller />
       </div>
     );
   }
