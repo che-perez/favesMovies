@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Styled from 'styled-components';
 
 import SearchBar from "./SearchBar";
 import MoviesResults from "./MoviesResults";
@@ -51,15 +52,20 @@ class Controller extends Component {
   }
 
   render() {
-    console.log("hello", this.state.searchList);
+    const Container = Styled.div`
+      display: flex;
+
+    `;
     return (
       <div>
         <SearchBar searchMovie={this.searchMovie} />
+        <Container>
         <MoviesResults
           favesMovies={this.state.favesMovies}
           searchList={this.state.searchList}
         />
         <MovieDetails />
+        </Container>
       </div>
     );
   }
