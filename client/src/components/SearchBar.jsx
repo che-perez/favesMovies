@@ -103,7 +103,7 @@ class SearchBar extends Component {
             required
           />
           <Button type="submit">
-            <i class="fas fa-search" />
+            <i className="fas fa-search" />
           </Button>
         </Form>
       </Bar>
