@@ -21,9 +21,14 @@ class MovieResults extends Component {
     const Container = Styled.div`
       width: 30vw;
       background: #EEEEEE;
-        
-        
-        `;
+      height: 100vh;
+      `;
+
+    const List = Styled.div`
+    overflow-y: scroll;
+    max-height: 1000px;
+    
+    `;
 
     const Button = Styled.div`
       display: inline-block;
@@ -32,6 +37,7 @@ class MovieResults extends Component {
       width: 15vw;
       text-align: center;
       padding: 10px 0px;
+      cursor: pointer;
 
       &:hover,:active {
         background: #21AAB2;
@@ -58,16 +64,21 @@ class MovieResults extends Component {
         <Button onClick={() => this.displayList(this.props.favesMovies)}>
           FAVES {this.props.favesMovies.length}
         </Button>
+        <List>
         {this.state.displayList.map(movie => {
           return (
             <Movies
               key={movie.id}
+              id={movie.id}
               poster={movie.poster_path}
               title={movie.original_title}
               release_date={movie.release_date}
+              selectMovie={this.props.selectMovie}
+              list={this.state.displayList}
             />
           );
         })}
+        </List>
       </Container>
     );
   }
