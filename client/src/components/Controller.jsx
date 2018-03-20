@@ -12,9 +12,11 @@ class Controller extends Component {
       error: null,
       searchList: [],
       favesMovies: [],
-      isLoaded: false
+      isLoaded: false,
+      movieDetails: []
     };
     this.searchMovie = this.searchMovie.bind(this);
+    this.selectMovie = this.selectMovie.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +53,12 @@ class Controller extends Component {
       );
   }
 
+  selectMovie(id,list) {
+    let details = list.filter(movie => movie.id === id);
+    this.setState({movieDetails: details });
+  }
+
+
   render() {
     const Container = Styled.div`
       display: flex;
@@ -63,8 +71,9 @@ class Controller extends Component {
         <MoviesResults
           favesMovies={this.state.favesMovies}
           searchList={this.state.searchList}
+          selectMovie={this.selectMovie}
         />
-        <MovieDetails />
+        <MovieDetails details={this.state.movieDetails} />
         </Container>
       </div>
     );

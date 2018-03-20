@@ -13,11 +13,13 @@ font-weight: bold;
 
 const Container = Styled.div`
   width: 70vw;
+  height: 100vh;
 
 `;
 
 
-const MovieDetails = function() {
+const MovieDetails = function(props) {
+  console.log(props)
   return (
     <Container>
       <Header> DETAILS</Header>
