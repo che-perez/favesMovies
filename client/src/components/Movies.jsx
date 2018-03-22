@@ -23,18 +23,25 @@ const Movies = function(props) {
     margin: 4px 0px;
     border-right: 2px solid #EEEEEE;
     cursor: pointer;
-
+    position: relative;
   `;
 
   const Fav = Styled.div`
     font-size: 20px;
     align-self: flex-end;
-    margin: 5px;
+    margin: 0px 10px 0px 0px;
+    position: absolute;
+    right: 0;
+
+    &:hover {
+      color: red;
+    }
 
   `;
 
   const Title = Styled.p`
     margin-left: 10px;
+    font-size 1.5em;
   `;
   const Year = Styled.p`
     margin-left: 10px;
