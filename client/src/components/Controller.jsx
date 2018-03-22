@@ -13,7 +13,8 @@ class Controller extends Component {
       searchList: [],
       favesMovies: [],
       isLoaded: false,
-      movieDetails: []
+      movieDetails: [],
+      detailsLoaded: false
     };
     this.searchMovie = this.searchMovie.bind(this);
     this.selectMovie = this.selectMovie.bind(this);
@@ -55,7 +56,7 @@ class Controller extends Component {
 
   selectMovie(id,list) {
     let details = list.filter(movie => movie.id === id);
-    this.setState({movieDetails: details });
+    this.setState({movieDetails: details, detailsLoaded: true });
   }
 
 
@@ -73,7 +74,7 @@ class Controller extends Component {
           searchList={this.state.searchList}
           selectMovie={this.selectMovie}
         />
-        <MovieDetails details={this.state.movieDetails} />
+        <MovieDetails details={this.state.movieDetails} detailsLoaded={this.state.detailsLoaded}/>
         </Container>
       </div>
     );
