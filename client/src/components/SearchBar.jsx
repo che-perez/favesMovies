@@ -47,8 +47,7 @@ class SearchBar extends Component {
     const Search = Styled.input`
     width: 330px;
     height: 20px;
-    padding: 10px 5px;
-    float: left;    
+    padding: 10px 5px; 
     font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
     border: 0;
     background: #eee;
