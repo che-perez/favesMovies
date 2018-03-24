@@ -59,6 +59,17 @@ class Controller extends Component {
     this.setState({movieDetails: details, detailsLoaded: true });
   }
 
+  addToFavorites(data, e) {
+    e.preventDefault();
+    fetch("/api/favorites", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(res => res.json())
+  }
+
 
   render() {
     const Container = Styled.div`
