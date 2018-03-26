@@ -21,12 +21,12 @@ class MovieResults extends Component {
     const Container = Styled.div`
       width: 30vw;
       background: #EEEEEE;
-      height: 100vh;
       `;
 
     const List = Styled.div`
     overflow-y: scroll;
-    max-height: 1000px;
+    height: auto;
+    max-height: 1125px;
     
     `;
 
@@ -55,14 +55,23 @@ class MovieResults extends Component {
         font-weight: bold;
     `;
 
+    const NumberItems = Styled.span`
+    background: white;
+    color: black;
+    margin-left: 2px;
+    padding: 2px 4px;
+    border-radius: 5px;
+    text-align: center;
+    `;
+
     return (
       <Container>
         <Header>FILMS</Header>
         <Button onClick={() => this.displayList(this.props.searchList)}>
-          ALL {this.props.searchList.length}
+          ALL <NumberItems>{this.props.searchList.length}</NumberItems>
         </Button>
         <Button onClick={() => this.displayList(this.props.favesMovies)}>
-          FAVES {this.props.favesMovies.length}
+          FAVES <NumberItems>{this.props.favesMovies.length}</NumberItems>
         </Button>
         <List>
         {this.state.displayList.map(movie => {
@@ -71,7 +80,7 @@ class MovieResults extends Component {
               key={movie.id}
               id={movie.id}
               poster={movie.poster_path}
-              title={movie.original_title}
+              title={movie.title}
               release_date={movie.release_date}
               selectMovie={this.props.selectMovie}
               list={this.state.displayList}
