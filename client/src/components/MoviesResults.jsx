@@ -18,6 +18,15 @@ class MovieResults extends Component {
   }
 
   render() {
+
+    let icon;
+    if(this.state.displayList === this.props.searchList) {
+      icon = <i className="far fa-heart" title="Add to Favorites"/>;
+    } else {
+      icon = <i className="far fa-trash-alt" title="Remove from Favorites"/>
+    }
+
+
     const Container = Styled.div`
       width: 30vw;
       background: #EEEEEE;
@@ -84,6 +93,7 @@ class MovieResults extends Component {
               release_date={movie.release_date}
               selectMovie={this.props.selectMovie}
               list={this.state.displayList}
+              icon={icon}
             />
           );
         })}

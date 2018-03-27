@@ -48,7 +48,6 @@ addToFavorites(id) {
       );
     }
 
-
     const Box = Styled.div`
     display: flex;
     align-items: flex-start;
@@ -91,7 +90,7 @@ addToFavorites(id) {
           </Year>
         </div>
         <Fav onClick={() => this.addToFavorites(this.props.id)}>
-          <i className="far fa-heart" />
+          {this.props.icon}
         </Fav>
       </Box>
     );
