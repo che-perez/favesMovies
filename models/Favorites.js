@@ -19,10 +19,10 @@ Favorites.findById = (id) => {
 Favorites.create = (movie) => {
     return db.one(
         `INSERT INTO favorites (
-            original_title, overview, poster_path, backdrop_path, movie_id)
-            VALUES ( $1, $2, $3, $4, $5)
+            title, overview, poster_path, backdrop_path, movie_id, release_date)
+            VALUES ( $1, $2, $3, $4, $5, $6)
             RETURNING *`,
-            [movie.original_title, movie.overview, movie.poster_path, movie.backdrop_path, movie.movie_id]
+            [movie.title, movie.overview, movie.poster_path, movie.backdrop_path, movie.movie_id, movie.release_date]
         );
 };
 
