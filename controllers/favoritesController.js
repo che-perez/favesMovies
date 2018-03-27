@@ -18,11 +18,12 @@ favoritesController.index = (req, res) => {
 
 favoritesController.create = (req, res) => {
   Favorites.create({
-    original_title: req.body.original_title,
+    title: req.body.title,
     overview: req.body.overview,
     poster_path: req.body.poster_path,
     backdrop_path: req.body.backdrop_path,
-    movie_id: req.body.movie_id
+    movie_id: req.body.movie_id,
+    release_date: req.body.release_date
   })
     .then(movie => {
       res.json({
