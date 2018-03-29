@@ -6,7 +6,7 @@ const API_KEY = process.env.API_SECRET_KEY;
 
 function searchMovie(req, res, next) {
   fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${req.params.title}&include_adult=true`
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${req.params.title}&include_adult=false`
   )
     .then(fetchRes => {
       return fetchRes.json();
