@@ -9,9 +9,7 @@ class Movies extends Component {
     this.addToFavorites = this.addToFavorites.bind(this);
   }
 
-
-
-addToFavorites(id) {
+  addToFavorites(id) {
   let faveMovie = this.props.list.filter(movie => movie.id === id);
 
     let data = {
@@ -31,6 +29,13 @@ addToFavorites(id) {
     body: JSON.stringify(data),
   }).then(res => res.json())
 }
+
+  removeFromFavorites(id) {
+    fetch(`/api/favorites/${id}`, {
+      method: 'DELETE',
+    }).then(res => res.json())
+      .catch(err => console.log(err));
+  }
 
   render() {
     let poster;
