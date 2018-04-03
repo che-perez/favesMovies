@@ -38,6 +38,7 @@ class Movies extends Component {
     align-self: flex-end;
     margin: 0px 10px 0px 0px;
     position: absolute;
+    color: ${this.props.color};
     right: 0;
 
     &:hover {
@@ -56,6 +57,7 @@ class Movies extends Component {
   `;
 
     return (
+
       <Box
         onClick={() => this.props.selectMovie(this.props.id, this.props.list)}
       >
@@ -66,9 +68,15 @@ class Movies extends Component {
             <Moment format="YYYY">{this.props.release_date}</Moment>
           </Year>
         </div>
-        <Fav onClick={() => this.props.addOrRemove(this.props.id)}>
+        {this.props.inFavorites ? (
+        <Fav color='red' >
+          <i className="fas fa-heart"></i>
+        </Fav>
+        ) : (
+          <Fav onClick={() => this.props.addOrRemove(this.props.id)}>
           {this.props.icon}
         </Fav>
+        )}
       </Box>
     );
   }
