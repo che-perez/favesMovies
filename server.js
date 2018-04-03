@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send("Hola Mundo");
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 const apiRoutes = require('./routes/apiRoutes');
