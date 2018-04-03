@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Styled from 'styled-components';
+import Styled from "styled-components";
 
 import SearchBar from "./SearchBar";
 import MoviesResults from "./MoviesResults";
@@ -54,9 +54,20 @@ class Controller extends Component {
       );
   }
 
-  selectMovie(id,list) {
+  checkMovies() {
+    let alreadyFave = this.state.searchList.map(movie => {
+      if (this.state.favesMovies.some(fave => fave.movie_id === movie.id)) {
+        movie.inFavorites = true;
+      }
+      return movie;
+    });
+
+    return alreadyFave;
+  }
+
+  selectMovie(id, list) {
     let details = list.filter(movie => movie.id === id);
-    this.setState({movieDetails: details, detailsLoaded: true });
+    this.setState({ movieDetails: details, detailsLoaded: true });
   }
 
   render() {
@@ -64,16 +75,20 @@ class Controller extends Component {
       display: flex;
 
     `;
+    let list = this.checkMovies();
     return (
       <div>
         <SearchBar searchMovie={this.searchMovie} />
         <Container>
-        <MoviesResults
-          favesMovies={this.state.favesMovies}
-          searchList={this.state.searchList}
-          selectMovie={this.selectMovie}
-        />
-        <MovieDetails details={this.state.movieDetails} detailsLoaded={this.state.detailsLoaded}/>
+          <MoviesResults
+            favesMovies={this.state.favesMovies}
+            searchList={list}
+            selectMovie={this.selectMovie}
+          />
+          <MovieDetails
+            details={this.state.movieDetails}
+            detailsLoaded={this.state.detailsLoaded}
+          />
         </Container>
       </div>
     );
