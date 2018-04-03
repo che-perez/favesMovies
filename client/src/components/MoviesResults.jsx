@@ -128,6 +128,7 @@ class MovieResults extends Component {
                 poster={movie.poster_path}
                 title={movie.title}
                 release_date={movie.release_date}
+                inFavorites={movie.inFavorites}
                 selectMovie={this.props.selectMovie}
                 list={this.state.displayList}
                 icon={icon}
