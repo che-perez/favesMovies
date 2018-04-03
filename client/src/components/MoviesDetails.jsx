@@ -12,7 +12,7 @@ font-weight: bold;
 
 const Container = Styled.div`
   width: 70vw;
-  height: 100vh;
+  height: 98vh;
   background: #EEE;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@ const MovieDetails = function(props) {
                 props.details[0].poster_path
               }`}
             />
-          </DetailsDiv>{" "}
+          </DetailsDiv>
         </Div>
       ) : (
         <Message>Select a Movie</Message>
