@@ -22,7 +22,10 @@ class Movies extends Component {
         <img src="http://via.placeholder.com/150x225" alt={this.props.title} />
       );
     }
-
+    let color;
+    if(this.props.inFavorites) {
+      color = 'red';
+    }
     const Box = Styled.div`
     display: flex;
     align-items: flex-start;
@@ -38,7 +41,7 @@ class Movies extends Component {
     align-self: flex-end;
     margin: 0px 10px 0px 0px;
     position: absolute;
-    color: ${this.props.color};
+    color: ${color};
     right: 0;
 
     &:hover {
@@ -69,7 +72,7 @@ class Movies extends Component {
           </Year>
         </div>
         {this.props.inFavorites ? (
-        <Fav color='red' >
+        <Fav>
           <i className="fas fa-heart"></i>
         </Fav>
         ) : (
