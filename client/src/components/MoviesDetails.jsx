@@ -48,6 +48,7 @@ const Img = Styled.img`
   width: 100%
   max-width: 70vw;
   height: auto;
+  max-height: 65vh;
 `;
 
 const DetailsDiv = Styled.div`
@@ -72,8 +73,18 @@ position: absolute;
 margin-right: 20px;
 right: 0;
 top: 15%;
-
 `;
+
+const PlaceHolder = Styled.div`
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    background: #EEE;
+    border: 2px solid #21AAB2;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #21AAB2;`
 
 const Div = Styled.div`
 width: 100%
@@ -90,11 +101,13 @@ const MovieDetails = function(props) {
       {props.detailsLoaded ? (
         <Div>
           <Hero>
+            {props.details[0].backdrop_path ? (
             <Img
               src={`https://image.tmdb.org/t/p/original${
                 props.details[0].backdrop_path
               }`}
-            />
+            /> 
+            ) : ( <PlaceHolder> <i className="far fa-images"></i> </PlaceHolder>) }
             <Title>{props.details[0].title}</Title>
           </Hero>
           <DetailsDiv>
