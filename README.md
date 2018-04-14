@@ -2,6 +2,16 @@
 
 App to search and store my favorites movies.
 
+## Screenshots
+
+#### Searching a Movie
+
+![Search Movie](screenshots/searchMovie.png)
+
+#### Browse Favorites Movies
+
+![Favorites Movies](screenshots/faveList.png)
+
 ## Install
 
 - Fork and/or Clone Repository.
