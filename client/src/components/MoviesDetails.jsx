@@ -12,7 +12,7 @@ font-weight: bold;
 
 const Container = Styled.div`
   width: 70vw;
-  height: 98vh;
+  height: auto;
   background: #EEE;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,8 @@ const PlaceHolder = Styled.div`
 const Div = Styled.div`
 width: 100%
 max-width: 70vw;
-max-height: 700px;
+height: auto;
+overflow-y: scroll;
 `;
 
 const MovieDetails = function(props) {
@@ -113,7 +114,7 @@ const MovieDetails = function(props) {
           <DetailsDiv>
             <Summary>{props.details[0].overview}</Summary>
             <Poster
-              src={`https://image.tmdb.org/t/p/w200/${
+              src={`https://image.tmdb.org/t/p/w200${
                 props.details[0].poster_path
               }`}
             />
