@@ -1,6 +1,6 @@
 # FavesMovies :heart: :movie_camera: :clapper:
 
-App to search and store my favorites movies.
+Friendly app where you can search movies, view some details, and store you favorites ones.
 
 ## Screenshots
 
