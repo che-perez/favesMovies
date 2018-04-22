@@ -77,14 +77,15 @@ top: 15%;
 
 const PlaceHolder = Styled.div`
     display: flex;
-    width: 100%;
+    width: 100% ;
     height: 60vh;
     background: #EEE;
     border: 2px solid #21AAB2;
     justify-content: center;
     align-items: center;
     font-size: 50px;
-    color: #21AAB2;`
+    color: #21AAB2;
+    `;
 
 const Div = Styled.div`
 width: 100%
@@ -108,16 +109,17 @@ const MovieDetails = function(props) {
                 props.details[0].backdrop_path
               }`}
             /> 
-            ) : ( <PlaceHolder> <i className="far fa-images"></i> </PlaceHolder>) }
+            ) : ( <PlaceHolder > <i className="far fa-images"></i> </PlaceHolder>) }
             <Title>{props.details[0].title}</Title>
           </Hero>
           <DetailsDiv>
             <Summary>{props.details[0].overview}</Summary>
+            {props.details[0].poster_path ? (
             <Poster
               src={`https://image.tmdb.org/t/p/w200${
                 props.details[0].poster_path
               }`}
-            />
+            /> ) : ( <Poster src="http://via.placeholder.com/200x300" /> ) }
           </DetailsDiv>
         </Div>
       ) : (
